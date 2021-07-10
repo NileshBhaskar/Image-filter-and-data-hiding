@@ -1,0 +1,201 @@
+html {
+  background-color: PaleGoldenRod;
+}
+body {
+  
+}
+
+#main-content{
+/*   margin-left:50px;  */
+  
+}
+.main-content-article{
+  font-family: Georgia;
+  font-size: 16px;
+  margin-left: 50px;
+  border: 1px solid brown;  
+  background-color: LightGoldenRodYellow;
+  border-radius: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+div {
+  border: 1px solid gray;  
+  padding: 6px;
+  padding-right: 2px;
+  border-radius: 10px;  
+  background-color: PaleGoldenRod;
+  margin-bottom: 4px;
+}
+
+h2 {
+  color: DarkSlateBlue;
+  background-color: PaleGoldenRod;
+  padding: 6px;
+  /* max-width: 550px; */
+  text-align: center;
+  border-radius: 10px; 
+}
+
+canvas {
+  border: 1px solid gray;
+}
+
+input {
+  font-size: 14px;
+  transition:background-color 0.9s , color 0.9s;
+}
+
+input[type="button"]:hover{
+  color:red;
+  background-color:cyan;
+  border-radius:50%;
+box-shadow: 0px 0px 6px 4px rgba(230, 196, 196, 0.3);
+}
+
+.digtxt {
+  font-family: Arial;
+  font-weight: bold;
+  color: DarkSlateBlue;  
+  margin-right: 6px;
+}
+
+.divInfoLabel{
+  color: DarkSlateBlue;
+  font-weight: bold;  
+  margin-right: 20px;
+}
+.subDivInfoLabel {
+  color: DarkBlue;  
+}
+
+.Unbreakable {
+  white-space: nowrap;
+}
+
+input[type="color"] {
+  height: 26px;
+  width: 50px;
+  padding: 4px;
+}
+input[type="range"] {
+  height: 5px;
+}
+#inputCanvasWidth {
+  width: 300px;  
+}
+#inputBlurIntensity, #inputBlurRadius {
+  width: 120px;
+}
+
+#divFiltersCommon {
+  max-width: 350px;
+}
+#divApplyColor {
+  max-width: 170px;
+}
+#divApplyBlur {
+  max-width: 560px;
+}
+#social {
+  position: fixed;
+  top: 20%;
+  left: 15px;
+  line-height: 1;
+}
+
+#social .social-btn {
+  display: block;
+  padding: 14px 13px;
+  color: #ffffff;
+}
+
+#social .social-img {
+  width: 19px;
+}
+
+#facebook {
+  background-color: #3b5998;
+  transition:border-radius 0.5s;
+}
+
+#facebook:hover {
+  background-color: #2d4373;
+  border-radius:50%;
+}
+
+#linkedin {
+  background-color: #0077b5;
+  transition:border-radius 0.5s;
+}
+
+#linkedin:hover {
+  background-color: #00779;
+  border-radius:50%;
+}
+
+#twitter {
+  background-color: #83c3f3;
+  transition:border-radius 0.5s;
+}
+
+#twitter:hover {
+  background-color: #55acee;
+  border-radius:50%;
+}
+
+#gmail {
+  background-color: #dd4b39;
+  transition:border-radius 0.5s;
+}
+
+#gmail:hover {
+  background-color: #c23321;
+  border-radius:50%;
+}
+
+#whatsapp {
+  background-color: #6ba92f;
+  transition:border-radius 0.5s;
+}
+
+#whatsapp:hover {
+  background-color: #528124;
+  border-radius:50%;
+}
+
+#mail {
+  background-color: #ed4926;
+  transition:border-radius 0.5s;
+}
+
+#mail:hover {
+  background-color: #cf3311;
+  border-radius:50%;
+}
+
+#greenscreen-style {
+  background-color: wheat;
+  font-family: Verdana;
+  font-size: 16px;
+  margin: 40px;
+}
+
+#greenscreen-style h1{
+  color: DarkSlateBlue;
+  background-color: PaleGoldenRod;
+  padding: 6px;
+  /* max-width: 550px; */
+  text-align: center;
+  border-radius: 10px; 
+}
+
+#greenscreen-style canvas {
+  border: 1px solid #c3c3c3;
+  height: 200px;
+}
+
+#greenscreen-style input {
+  font-size: 12pt;
+}

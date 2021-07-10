@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - A Pen by Nilesh Bhaskar</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js" >
+</script>
+<main id="main-content">
+<article class="main-content-article">
+<h2>Filter mini project</h2>
+
+<p>
+  Canvas width:
+  <input type="range" id="inputCanvasWidth" min="300" max="1400" step="10" oninput="resizeCanvas(parseInt(this.value))">:  
+  <output id="canvasWidthOut" class="digtxt"></output>
+ </p>
+    
+<canvas id="canvas">
+</canvas>  
+
+<p>
+  Image size in pixels:
+  <span id="imgWidthOut" class="digtxt"></span>
+  &#x2715;
+  <span id="imgHeightOut" class="digtxt"></span>
+</p>
+<p>
+  <input type="file" id="finput" multiple="false" accept="image/*" onchange="upload(this)">    
+</p>
+<p>
+  <input type="button" id="bnShowOriginal" value="Show original" onclick="showOriginal()">
+  <input type="button" id="bnShowModif" value="Show modificated" onclick="showModif()">  
+  <input type="button" id="bnClearCanvas" value="Clear Canvas" onclick="clearCanvas()">  
+</p>
+
+<div>
+  <p>
+    <span class="divInfoLabel">Filters:</span>
+    <input type="button" id="bnResetToOriginal" value="Reset to original" onclick="resetToOriginal()">
+  </p>
+
+  <div id="divFiltersCommon">
+   <input type="button" id="bnMakeGray" value="Gray" onclick="makeGray()">
+   <input type="button" id="bnMakeInverse" value="Color inversion" onclick="makeInverse()">
+   <input type="button" id="bnMakeMirror" value="Mirror" onclick="makeMirror()">
+   <input type="button" id="bnUpsideDown" value="Upside down" onclick="upsideDown()">
+  </div>
+  
+   <div id="divApplyColor">     
+     <span class="subDivInfoLabel">Color:</span>
+     <input type="color" id="inputColor" value="#FF0000">
+     <input type="button" id="bnApplyColor" value="Apply" onclick="applyColor()">
+   </div>
+  <div id=divApplyBlur>
+    <span class="subDivInfoLabel">Blur:</span>    
+    <span class="Unbreakable">Intensity:<input type="range" id="inputBlurIntensity" min="30" max="100" step="1" oninput="changeBlurIntensity(parseInt(this.value))">:  
+    <output id="blurIntensOut" class="digtxt"></output></span>
+
+    <span class="Unbreakable">Radius:<input type="range" id="inputBlurRadius" min="1" max="20" step="1" oninput="changeBlurRadius(parseInt(this.value))">:  
+      <output id="blurRadiusOut" class="digtxt"></output></span>
+      <input type="button" id="bnMakeBlur" value="Apply" onclick="blurFilter()">
+    
+  </div>  
+  <div id=divApplyBrightness>
+    <span class="subDivInfoLabel">Brightness:</span>    
+    <span class="Unbreakable">Intensity:<input type="range" id="inputBrightnessIntensity" min="-255" max="255" step="1" oninput="changeBrightnessIntensity(this.value)">:  
+    <output id="brightnessIntensOut" class="digtxt"></output></span>
+    <input type="button" id="bnMakeBright" value="Apply" onclick="brightnessFilter()">
+    
+  </div>
+  <div id=divApplyContrast>
+    <span class="subDivInfoLabel">Contrast:</span>    
+    <span class="Unbreakable">Intensity:<input type="range" id="inputContrastIntensity" min="-255" max="255" step="1" oninput="changeContrastIntensity(this.value)">:  
+    <output id="contrastIntensOut" class="digtxt"></output></span>
+    <input type="button" id="bnMakeContrast" value="Apply" onclick="contrast()">
+    
+  </div>
+</div>
+<hr>
+<section id="greenscreen-style">
+		<h1>Green Screen Filter</h1>
+
+		<canvas id = "gsfgcan">
+		</canvas>
+		<canvas id = "gsbgcan">
+		</canvas>
+	
+		<p>
+			Foreground: <input type="file" multiple="false" accept="image/*" id="gsfgfile" onchange="gsloadForegroundImage()" >
+		</p>
+
+		<p>
+			Background: <input type="file" multiple="false" accept="image/*" id="gsbgfile" onchange="gsloadBackgroundImage()" >
+		</p>
+
+		<p>
+			<input type="button" value="Create Composite" onclick="gsdoGreenScreen()" >
+			<input type="button" value="Clear Canvases" onclick="gsclearCanvas()" >
+		</p>
+		<br>
+		<br>
+	</section>
+  <section>
+    <h1>Steganography</h1>
+
+<canvas id = "stfgcan">
+</canvas>
+<canvas id = "stbgcan">
+</canvas>
+
+<p>
+Visible Image: <input type="file" multiple="false" accept="image/*" id="stfgfile" onchange="stloadForegroundImage()" >
+</p>
+
+<p>
+Hidden Image: <input type="file" multiple="false" accept="image/*" id="stbgfile" onchange="stloadBackgroundImage()" >
+</p>
+
+<p>
+<input type="button" value="Create Composite" onclick="doHiding()" >
+<input type="button" value="Clear Canvases" onclick="clearCanvas()" >
+</p>
+<br>
+<br>
+<canvas id = "extractedcan">
+</canvas>
+<p>
+<input type="button" value="Extract" onclick="doExtraction()" >
+<input type="button" value="Clear Canvases" onclick="clearCanvas()" >
+</p>
+  </section>
+ </article>
+	<section id="social">
+            <a id="facebook" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000014_1549330414_facebook-logo.png" alt="fb"></a>
+
+            <a id="linkedin" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000015_1549330433_linkedin-logo.png" alt="in"></a>
+
+            <a id="twitter" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000016_1549330452_twitter-logo.png" alt="twi"></a>
+
+            <a id="gmail" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000017_1549330467_google-logo.png" alt="g+"></a>
+
+            <a id="whatsapp" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000018_1549330485_whatsapp-logo.png" alt="w-app"></a>
+
+            <a id="mail" class="social-btn" target="_blank" href="#"><img class="social-img" src="https://ninjasfiles.s3.amazonaws.com/asset_0000000000000019_1549330510_mail-logo.png" alt="mail"></a>
+    </section>
+	
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
